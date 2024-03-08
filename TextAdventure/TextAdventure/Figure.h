@@ -6,11 +6,12 @@ public:
 	Figure();
 	~Figure();
 
+	//use and description overrides
 	void Description() const override;
 	void Use() override;
 
 private:
-	int timesTouched;
+	//checks if you have picked it up
 	bool hasVanished;
 
 };

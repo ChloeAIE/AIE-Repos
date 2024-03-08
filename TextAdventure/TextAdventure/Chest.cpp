@@ -13,6 +13,7 @@ Chest::~Chest()
 
 void Chest::Description() const
 {
+	//Chest description changes on if its been opened or not
 	if (isOpened == false)
 	{
 		std::cout << "A mysterious chest sits in the center of this room, it doesn't appear to be locked, better be careful.." << std::endl;
@@ -25,9 +26,11 @@ void Chest::Description() const
 
 void Chest::Use()
 {
+	//chest use changes if its been opened
 	if (isOpened == false)
 	{
-		std::cout << "You slowly open the chest, a faint mist starts pouring out onto the floor, it quickly rises and flows through a crack in the ceiling as if it is escaping.. maybe you shouldn't have done that.." << std::endl;
+		std::cout << "You slowly open the chest, a thick black mist starts pouring out onto the floor, it quickly rushes through a crack" << std::endl;
+		std::cout << "in the wall while growling, as if it is escaping..maybe you shouldn't have done that.." << std::endl;
 		isOpened = true;
 	}
 	else

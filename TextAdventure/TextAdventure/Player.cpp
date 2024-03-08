@@ -5,14 +5,14 @@
 
 Player::Player()
 {
-	//CustomString* test1 = new CustomString("Fireball");
-	spells.push_back(CustomString("lightningbolt"));
-	spells.push_back(CustomString("fireblast"));
-	spells.push_back(CustomString("freezebeam"));
-	spells.push_back(CustomString("aircannon"));
-	spells.push_back(CustomString("stonespikes"));
+	//setting up the spells into a vector
+	spells.push_back(CustomString("thunder fall"));
+	spells.push_back(CustomString("incinerate"));
+	spells.push_back(CustomString("cryo blast"));
+	spells.push_back(CustomString("air cannon"));
+	spells.push_back(CustomString("stone spikes"));
 	spells.push_back(CustomString("blizzard"));
-	spells.push_back(CustomString("poisonspray"));
+	spells.push_back(CustomString("miasma"));
 }
 
 Player::~Player()
@@ -21,11 +21,11 @@ Player::~Player()
 
 bool Player::FindSpell(CustomString& spell)
 {
-	std::sort (spells.begin(), spells.end());
+	std::sort (spells.begin(), spells.end()); //sorting the vector into order
 	int l = 0;
 	int r = spells.size() -1;
 
-	while (l <= r)
+	while (l <= r) //binary searches for the entered spell
 	{
 		int startFrom = (l + r) / 2;  
 

@@ -13,6 +13,7 @@ Key::~Key()
 
 void Key::Description() const
 {
+	//key description changes if used
 	if(haveKey == false)
 	{
 		std::cout << "A dark black key with a ruby on the end of it sits on the floor.." << std::endl;
@@ -25,6 +26,7 @@ void Key::Description() const
 
 void Key::Use()
 {
+	//key use changes if used
 	if (haveKey == false)
 	{
 		std::cout << "You cautiously pick up the key.. it is freezing to touch.. what could it unlock?" << std::endl;

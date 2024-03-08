@@ -14,6 +14,7 @@ StrangePotion::~StrangePotion()
 
 void StrangePotion::Description() const
 {
+	//potion description changes if its been used
 	if(m_drink == false)
 	{
 		std::cout << "There is a round glass bottle with a glistening blue liquid inside.." << std::endl;
@@ -27,6 +28,7 @@ void StrangePotion::Description() const
 
 void StrangePotion::Use()
 {
+	//potion use changes if its been used
 	if(m_drink == false)
 	{
 		std::cout << "You drink the strange potion.. you feel like the magic flowing through your body.." << std::endl;

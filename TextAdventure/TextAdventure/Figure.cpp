@@ -3,7 +3,6 @@
 
 Figure::Figure()
 {
-	timesTouched = 0;
 	hasVanished = false;
 }
 
@@ -14,36 +13,27 @@ Figure::~Figure()
 
 void Figure::Description() const
 {
+	//figure description changes if its been used
 	if (hasVanished == false)
 	{
-		std::cout << "A strange stone cat figurine rests on a podium in the center of the room.. its eyes seem to be watching you.." << std::endl;
+		std::cout << "A strange stone cat figure rests on a podium in the center of the room.. its eyes seem to be watching you.." << std::endl;
 	}
 	else
 	{
-		std::cout << "The podium is empty.. where has that figure gone?" << std::endl;
+		std::cout << "All that remains is the figures podium.. " << std::endl;
 	}
 }
 
 void Figure::Use()
 {
-	if(timesTouched == 0)
+	//figure use changes if its been used
+	if (hasVanished == true)
 	{
-		std::cout << "You touch the stone figure and begin to feel dizzy, best not to do that again.." << std::endl;
-		timesTouched++;
+		std::cout << "You have already taken the figure.. it won't be coming back.." << std::endl;
 	}
-	if(timesTouched == 1)
+	else
 	{
-		std::cout << "The room begins to go dark and your eyes grow heavy.. are you sure about this?" << std::endl;
-		timesTouched++;
-	}
-	if (timesTouched == 2)
-	{
-		std::cout << "You awake feeling better than ever.. huh guess it was fine to touch.. but where has it gone?" << std::endl;
-		timesTouched++;
+		std::cout << "You take the strange figure.. holding it makes you feel at ease.. maybe it can protect you in here.." << std::endl;
 		hasVanished = true;
-	}
-	if(timesTouched == 3)
-	{
-		std::cout << "There is nothing to touch.. the figure has vanished.." << std::endl;
 	}
 }

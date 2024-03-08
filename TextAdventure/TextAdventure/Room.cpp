@@ -4,6 +4,7 @@
 #include "Chest.h"
 #include "Key.h"
 #include "CustomString.h"
+#include "Game.h"
 
 Room::Room()
 {
@@ -17,8 +18,10 @@ Room::~Room()
 	delete m_description;
 }
 
-void Room::SetUp(int i)
+void Room::SetUp(int i, Game* game)
 {
+	//Setting up the descriptions and items in the rooms based on a number that is grabbed in room set up
+	m_game = game;
 	switch (i)
 	{
 	case 0: //EmptyRoom
@@ -71,7 +74,7 @@ void Room::SetUp(int i)
 		break;
 	case 12: //Chest
 		this->item = new Chest();
-		this->m_description = new CustomString("The room is cold, a lone chest* waits in the center.. it seems to be drawing you in..");
+		this->m_description = new CustomString("The room is cold, a lone chest* waits in the center.. it seems to be drawing you in.. one of the rooms around you is    giving off a strange feeling.. ");
 		break;
 	case 13: //EmptyRoom
 		this->item = nullptr;
@@ -119,7 +122,7 @@ void Room::SetUp(int i)
 		break;
 	case 24: //Figure
 		this->item = new Figure();
-		this->m_description = new CustomString("A strange light is emitting from the ceiling of this room, it is pointing at a mysterious stone figure*.. it feels confortable in here..");
+		this->m_description = new CustomString("A strange light is emitting from the ceiling of this room, it is pointing at a mysterious stone figure*.. it feels      comfortable in here..");
 		break;
 
 	default: //Shouldnt be here
@@ -131,5 +134,5 @@ void Room::SetUp(int i)
 
 void Room::Description()const
 {
-	m_description->WriteConsole();
+	m_description->WriteConsole(); //writes the Description() to the room
 }
