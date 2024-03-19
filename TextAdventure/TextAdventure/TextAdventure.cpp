@@ -10,4 +10,4 @@ int main()
         game->DrawMap();
         game->RunGame();
     }
-}
+} //Comment to have something to merge! ^_^
