@@ -194,6 +194,13 @@ namespace MathClasses
             return(z * y * x);
         }
 
+        static Matrix3 MakeScale(float xScale, float yScale)
+        {
+            return Matrix3(xScale, 0.0f, 0.0f,
+                           0.0f, yScale, 0.0f,
+                           0.0f, 0.0f, 1.0f);
+        }
+
         static Matrix3 MakeScale(float xScale, float yScale, float zScale)
         {
             return Matrix3(xScale, 0.0f, 0.0f,
@@ -204,6 +211,29 @@ namespace MathClasses
         static Matrix3 MakeScale(Vector3 scale)
         {
             return MakeScale(scale.x, scale.y, scale.z);
+        }
+
+        static Matrix3 MakeTranslation(float x, float y, float z)
+        {
+            Matrix3 mat3;
+            mat3 = MakeIdentity();
+
+            mat3.m7 = x;
+            mat3.m8 = y;
+            mat3.m9 = z;
+
+            return mat3;
+        }
+
+        static Matrix3 MakeTranslation(Vector3 v3)
+        {
+            Matrix3 mat3;
+            mat3 = MakeIdentity();
+            mat3.m7 = v3.x;
+            mat3.m8 = v3.y;
+            mat3.m9 = v3.z;
+
+            return mat3;
         }
 
         /*Matrix3 modelMatrix = Matrix3::MakeIdentity();

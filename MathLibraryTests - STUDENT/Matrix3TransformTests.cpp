@@ -14,28 +14,28 @@ namespace MathLibraryTests
 	{
 	public:
 		// make trans from floats
-		//TEST_METHOD(MakeTranslationFloats)
-		//{
-		//	Matrix3 actual = Matrix3::MakeTranslation(1.2f, 3.4f, 1.0f);
+		TEST_METHOD(MakeTranslationFloats)
+		{
+			Matrix3 actual = Matrix3::MakeTranslation(1.2f, 3.4f, 1.0f);
 
-		//	Assert::AreEqual(
-		//		Matrix3(
-		//			1.0f, 0.0f, 0.0f,
-		//			0.0f, 1.0f, 0.0f,
-		//			1.2f, 3.4f, 1.0f),
-		//		actual);
-		//}
-		//// make trans from vector
-		//TEST_METHOD(MakeTranslationVector)
-		//{
-		//	Matrix3 actual = Matrix3::MakeTranslation(Vector3(1.2f, 3.4f, 1.0f));
+			Assert::AreEqual(
+				Matrix3(
+					1.0f, 0.0f, 0.0f,
+					0.0f, 1.0f, 0.0f,
+					1.2f, 3.4f, 1.0f),
+				actual);
+		}
+		// make trans from vector
+		TEST_METHOD(MakeTranslationVector)
+		{
+			Matrix3 actual = Matrix3::MakeTranslation(Vector3(1.2f, 3.4f, 1.0f));
 
-		//	Assert::AreEqual(
-		//		Matrix3(1.0f, 0.0f, 0.0f,
-		//			0.0f, 1.0f, 0.0f,
-		//			1.2f, 3.4f, 1.0f),
-		//		actual);
-		//}
+			Assert::AreEqual(
+				Matrix3(1.0f, 0.0f, 0.0f,
+					0.0f, 1.0f, 0.0f,
+					1.2f, 3.4f, 1.0f),
+				actual);
+		}
 		// make rotX from float
 		TEST_METHOD(MakeRotateXFloat)
 		{
@@ -98,7 +98,7 @@ namespace MathLibraryTests
 
 		}
 		// make scale from floats
-		/*TEST_METHOD(MakeScaleFloat2D)
+		TEST_METHOD(MakeScaleFloat2D)
 		{
 			Matrix3 actual = Matrix3::MakeScale(2.0f, 3.0f);
 
@@ -106,7 +106,7 @@ namespace MathLibraryTests
 				Matrix3(2.0f, 0.0f, 0.0f,
 						0.0f, 3.0f, 0.0f,
 						0.0f, 0.0f, 1.0f), actual);
-		}*/
+		}
 		// make scale from floats
 		TEST_METHOD(MakeScaleFloat3D)
 		{

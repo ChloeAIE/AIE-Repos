@@ -191,7 +191,7 @@ namespace MathClasses
         {
             return Matrix4(cosf(a), 0, sinf(a), 0,
                                0, 1, 0, 0,
-                           -sinf(a), 0, cosf(a), 1,
+                           -sinf(a), 0, cosf(a), 0,
                            0, 0, 0, 1);
         }
 
@@ -216,26 +216,49 @@ namespace MathClasses
             return(z * y * x);
         }
 
-        static Matrix4 MakeEuler(Vector4 v4)
+        static Matrix4 MakeEuler(Vector3 v3)
         {
-            Matrix4 x = MakeRotateX(v4.x);
-            Matrix4 y = MakeRotateY(v4.y);
-            Matrix4 z = MakeRotateZ(v4.z);
+            Matrix4 x = MakeRotateX(v3.x);
+            Matrix4 y = MakeRotateY(v3.y);
+            Matrix4 z = MakeRotateZ(v3.z);
 
             return(z * y * x);
         }
 
-        static Matrix4 MakeScale(float xScale, float yScale, float zScale, float wScale)
+        static Matrix4 MakeScale(float xScale, float yScale, float zScale)
         {
             return Matrix4(xScale, 0.0f, 0.0f, 0.0f,
                 0.0f, yScale, 0.0f, 0.0f,
                 0.0f, 0.0f, zScale, 0.0f,
-                0.0f, 0.0f, 0.0f, wScale);
+                0.0f, 0.0f, 0.0f, 1.0f);
         }
 
-        static Matrix4 MakeScale(Vector4 scale)
+        static Matrix4 MakeScale(Vector3 scale)
         {
-            return MakeScale(scale.x, scale.y, scale.z, scale.w);
+            return MakeScale(scale.x, scale.y, scale.z);
+        }
+
+        static Matrix4 MakeTranslation(float x, float y, float z)
+        {
+            Matrix4 mat4;
+            mat4 = MakeIdentity();
+
+            mat4.m13 = x;
+            mat4.m14 = y;
+            mat4.m15 = z;
+
+            return mat4;
+        }
+
+        static Matrix4 MakeTranslation(Vector3 v3)
+        {
+            Matrix4 mat4;
+            mat4 = MakeIdentity();
+            mat4.m13 = v3.x;
+            mat4.m14 = v3.y;
+            mat4.m15 = v3.z;
+
+            return mat4;
         }
 	};
 }
