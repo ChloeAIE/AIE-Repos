@@ -1,0 +1,8 @@
+2023-06-20
+==========
+
+Terry Nguyen <terryn@aie.edu>
+
+Rotated entities (e.g., tanks, turrets, bullets) to face towards the right to
+align with the X+ direction assuming a left-handed coordinate system, as seen
+in a default 2D scene in Raylib 4.5.0.
