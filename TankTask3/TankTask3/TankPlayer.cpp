@@ -19,7 +19,7 @@ void TankPlayer::OnUpdate(float deltaTime)
 
 	const float MOVESPEED = 150.0f;
 	const float TURNSPEED = 0.03f;
-	const float ROTATESPEED = 0.03f;
+	const float ROTATESPEED = 0.06f;
 	const float BULLETSPEED = 150.0f;
 
 	float yMove = 0.0f;

@@ -123,6 +123,15 @@ namespace MathClasses
             return sum;
         }
 
+        Vector3 operator /= (const float& right)
+        {
+            x = x / right;
+            y = y / right;
+            z = z / right;
+
+            return *this;
+        }
+
         bool operator == (const Vector3& right) const
         {
             Vector3 sum;
@@ -188,7 +197,7 @@ namespace MathClasses
             return copy;
         }
 
-        float Dot(const Vector3& other)
+        float Dot(const Vector3& other) const
         {
             return x * other.x + y * other.y + z * other.z;
         }

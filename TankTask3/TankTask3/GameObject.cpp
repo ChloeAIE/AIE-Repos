@@ -5,6 +5,8 @@
 
 static GameObject* m_root;
 
+// to be implemented when collider struct is made > Collider* m_collider;
+
 GameObject::GameObject()
 {
 	Parent = nullptr;

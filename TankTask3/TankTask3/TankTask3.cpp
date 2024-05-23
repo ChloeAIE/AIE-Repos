@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "raylib-cpp.hpp"
 #include "TankPlayer.h"
+#include "Ray.h"
 
 #include <iostream>
 
@@ -42,6 +43,8 @@ int main()
 
     Player.mBulletSpawn(&testDotSprite);
 
+    
+
     while (!window.ShouldClose())
     {
         float deltaTime = window.GetFrameTime();
@@ -55,6 +58,7 @@ int main()
 
             //Player.Draw();
             root.Draw();
+            
         }
         EndDrawing();
     }

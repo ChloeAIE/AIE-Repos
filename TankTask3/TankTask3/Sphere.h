@@ -1,8 +1,9 @@
 #pragma once
 #include "Vector3.h"
+#include "Collider.h"
 
 
-struct Sphere
+struct Sphere : public Collider
 {
     Sphere()
     {

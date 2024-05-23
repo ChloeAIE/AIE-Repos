@@ -2,6 +2,7 @@
 #include <vector>
 #include "Vector3.h"
 #include "Matrix3.h"
+#include "Collider.h"
 
 class GameObject
 {
@@ -94,5 +95,11 @@ public:
 
 	//scale vec3
 	void Scale(MathClasses::Vector3 scalar);
+
+
+	//collider functions
+	Collider* m_collider;
+
+	virtual void OnCollision();
 };
 
