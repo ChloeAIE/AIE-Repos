@@ -1,9 +1,11 @@
 #include "Bullet.h"
 #include "raylib-cpp.hpp"
 #include "GameObject.h"
+#include "Sphere.h"
 
 Bullet::Bullet()
 {
+	m_collider = new Sphere(GetWorldPosition(), 30);
 	
 
 	////SpriteObject newBullet;

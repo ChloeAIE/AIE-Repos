@@ -48,6 +48,15 @@ struct Sphere : public Collider
         }
     }
 
+    void CollisionCheck(Collider* other) override
+    {
+        //other is some other type of collider
+        //figure out which type of collider it is (e.g. sphere/plane)
+        //call the correct overlaps function we've created
+        //if overlaps is true => yes there was a collision
+        //call OnCollision on our owning game object (m_Object)
+    }
+
     
 };
 

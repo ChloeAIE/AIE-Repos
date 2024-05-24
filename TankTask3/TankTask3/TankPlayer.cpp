@@ -1,6 +1,12 @@
 #include "TankPlayer.h"
 #include "Bullet.h"
 #include <vector>
+#include "Sphere.h"
+
+TankPlayer::TankPlayer()
+{
+	m_collider = new Sphere(GetWorldPosition(), 50);
+}
 
 void TankPlayer::mBulletSpawn(GameObject* bulletSpawn)
 {

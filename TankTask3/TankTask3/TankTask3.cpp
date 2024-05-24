@@ -43,6 +43,7 @@ int main()
 
     Player.mBulletSpawn(&testDotSprite);
 
+    std::vector<Collider*> colliderVec;
     
 
     while (!window.ShouldClose())
@@ -51,6 +52,15 @@ int main()
 
         //Player.Update(deltaTime);
         root.Update(deltaTime);
+        root.GetColliders(colliderVec);
+
+        //Check every collide agaisnt every other collider
+        /*
+        for every collider i
+            for every collider j 
+                as long as i != j
+                    check collision for i agaisnt j
+        */
 
         BeginDrawing();
         {

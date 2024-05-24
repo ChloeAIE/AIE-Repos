@@ -98,8 +98,10 @@ public:
 
 
 	//collider functions
-	Collider* m_collider;
+	Collider* m_collider = nullptr;
 
 	virtual void OnCollision();
+
+	void GetColliders(std::vector<Collider*>& GC);
 };
 

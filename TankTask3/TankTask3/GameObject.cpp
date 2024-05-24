@@ -212,3 +212,20 @@ void GameObject::Scale(MathClasses::Vector3 scaling)
 {
 	LocalScale *= scaling;
 }
+
+void GameObject::GetColliders(std::vector<Collider*>& GC)
+{
+	//does THIS gameobject have a collider?
+	//if so, add to the vector (push_back collider to the vector)
+
+	if (m_collider != nullptr)
+	{
+		GC.push_back(m_collider);
+	}
+
+	for (int i = 0; i < Children.size(); i++)
+	{
+		//call getcolliders for each child
+		GetChild(i)->GetColliders(GC);
+	}
+}
