@@ -1,7 +1,5 @@
 #pragma once
-#include "Vector3.h"
 #include "Sphere.h"
-#include "Collider.h"
 
 struct Plane : public Collider
 {

@@ -5,7 +5,8 @@
 
 TankPlayer::TankPlayer()
 {
-	m_collider = new Sphere(GetWorldPosition(), 50);
+	//m_collider = new Sphere(GetWorldPosition(), 50);
+	//m_collider->m_Object = this;
 }
 
 void TankPlayer::mBulletSpawn(GameObject* bulletSpawn)
@@ -63,7 +64,7 @@ void TankPlayer::OnUpdate(float deltaTime)
 		turretRotate -= ROTATESPEED;
 	}
 
-	if (IsKeyDown(KeyboardKey::KEY_SPACE))
+	if (IsKeyPressed(KeyboardKey::KEY_SPACE))
 	{
 		Bullet* b = new Bullet();
 		//sets the bullet to the root

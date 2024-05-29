@@ -8,6 +8,8 @@ protected:
 	void OnUpdate(float deltaTime) override;
 	void OnDraw();
 
+	void OnCollision() override;
+
 public:
 	Bullet();
 

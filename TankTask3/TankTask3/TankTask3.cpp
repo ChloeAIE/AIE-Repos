@@ -3,6 +3,7 @@
 #include "raylib-cpp.hpp"
 #include "TankPlayer.h"
 #include "Ray.h"
+#include "Barrel.h"
 
 #include <iostream>
 
@@ -20,6 +21,8 @@ int main()
     raylib::Texture2D tankBarrel("res/tankBlue_barrel1_outline.png");
     raylib::Texture2D bulletSprite("res/bulletBlue1_outline.png");
     raylib::Texture2D testDot("res/barrelBlack_top.png");
+    raylib::Texture2D targetBarrel("res/barrelGreen_side.png");
+
 
     GameObject root;
     GameObject::setRoot(&root);
@@ -41,6 +44,16 @@ int main()
     //testDotSprite.Sprite = &testDot;
     testDotSprite.SetLocalPosition(65, 0);
 
+    Barrel barrelObject(MathClasses::Vector3(1500, 300, 1));
+    barrelObject.SetParent(&root);
+    barrelObject.Sprite = &targetBarrel;
+    //barrelObject.SetLocalPosition(1500, 300);
+
+    //attempt at putting a collider on the barrel
+    /*GameObject barrelCollider;
+    barrelCollider.SetParent(&root);
+    barrelCollider.SetLocalPosition(1500, 300);*/
+
     Player.mBulletSpawn(&testDotSprite);
 
     std::vector<Collider*> colliderVec;
@@ -61,6 +74,19 @@ int main()
                 as long as i != j
                     check collision for i agaisnt j
         */
+
+        for (int i = 0; i < colliderVec.size(); i++)
+        {
+            for (int j = 0; j < colliderVec.size(); j++)
+            {
+                if (i != j)
+                {
+                    colliderVec[i]->CollisionCheck(colliderVec[j]);
+                }
+            }
+        }
+
+        colliderVec.clear();
 
         BeginDrawing();
         {

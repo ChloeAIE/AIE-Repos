@@ -1,6 +1,7 @@
 #include "GameObject.h"
 #include <algorithm>
 #include <vector>
+#include "Sphere.h"
 
 
 static GameObject* m_root;
@@ -213,6 +214,19 @@ void GameObject::Scale(MathClasses::Vector3 scaling)
 	LocalScale *= scaling;
 }
 
+void GameObject::Destroy()
+{
+	if (Parent == nullptr)
+	{
+		return;
+	}
+
+	Parent->Children.erase(std::remove(Parent->Children.begin(), Parent->Children.end(), this), Parent->Children.end());
+
+	delete this;
+
+}
+
 void GameObject::GetColliders(std::vector<Collider*>& GC)
 {
 	//does THIS gameobject have a collider?
@@ -228,4 +242,9 @@ void GameObject::GetColliders(std::vector<Collider*>& GC)
 		//call getcolliders for each child
 		GetChild(i)->GetColliders(GC);
 	}
+}
+
+void GameObject::OnCollision()
+{
+
 }

@@ -149,6 +149,18 @@ namespace MathClasses
         {
             return !(*this == right);
         }
+
+        bool operator < (const Vector3& right) const
+        {
+            if (x < right.x && y < right.y && z < right.z)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         
         std::string ToString() const
         {

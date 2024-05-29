@@ -1,8 +1,9 @@
 #pragma once
 #include <vector>
-#include "Vector3.h"
 #include "Matrix3.h"
-#include "Collider.h"
+//#include "Collider.h"
+
+struct Collider; //forward declare
 
 class GameObject
 {
@@ -95,6 +96,8 @@ public:
 
 	//scale vec3
 	void Scale(MathClasses::Vector3 scalar);
+
+	void Destroy();
 
 
 	//collider functions
