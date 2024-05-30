@@ -2,8 +2,9 @@
 #include "GameObject.h"
 #include "raylib-cpp.hpp"
 #include "TankPlayer.h"
-#include "Ray.h"
+//#include "Ray.h"
 #include "Barrel.h"
+#include "Barriers.h"
 
 #include <iostream>
 
@@ -57,6 +58,17 @@ int main()
     Player.mBulletSpawn(&testDotSprite);
 
     std::vector<Collider*> colliderVec;
+    //raylib Y - top
+    Barriers botBarrier(MathClasses::Vector3(0, -1, 0), 895);
+    Barriers topBarrier(MathClasses::Vector3(0, 1, 0), -5);
+    Barriers leftBarrier(MathClasses::Vector3(1, 0, 0), -5);
+    Barriers rightBarrier(MathClasses::Vector3(-1, 0, 0), 1675);
+
+    botBarrier.SetParent(&root);
+    topBarrier.SetParent(&root);
+    leftBarrier.SetParent(&root);
+    rightBarrier.SetParent(&root);
+    
     
 
     while (!window.ShouldClose())
